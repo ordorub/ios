@@ -15,7 +15,7 @@ export class NewsComponent implements AfterViewInit {
   ngAfterViewInit() {
     const playDeviceFacingBack = (devices: any[]) => {
       // front camera or back camera check here!
-      const device = devices.find(f => (/back|rear|environment/gi.test(f.label))); // Default Back Facing Camera
+      const device = devices.find(f => (/back|rear|environment|зад/gi.test(f.label))); // Default Back Facing Camera
       this.camera?.playDevice(device ? device.deviceId : devices[0].deviceId);
     }
     this.camera?.start(playDeviceFacingBack).subscribe((r: any) => console.log(r), alert);
