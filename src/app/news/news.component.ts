@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core';
 import { NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
 
 @Component({
@@ -7,7 +7,7 @@ import { NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
-export class NewsComponent implements AfterViewInit {
+export class NewsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('camera') protected camera?: NgxScannerQrcodeComponent;
 
   constructor(private http: HttpClient) { }
@@ -22,5 +22,11 @@ export class NewsComponent implements AfterViewInit {
     this.camera?.start(playDeviceFacingBack).subscribe((r: any) => console.log(r), alert);
 
     this.http.get<string>(`https://192.168.1.42:7094/Shifts/GetServerTime`).subscribe();
+  }
+
+  ngOnDestroy() {
+    this.camera?.stop();
+    this.camera?.ngOnDestroy();
+    this.camera = undefined;
   }
 }
