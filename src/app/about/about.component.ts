@@ -13,6 +13,7 @@ export class AboutComponent implements AfterViewInit {
   constructor(private http: HttpClient) { }
 
   ngAfterViewInit() {
+    // this.camera?.start and this.http.get workы separately, but together they give an error
     const playDeviceFacingBack = (devices: any[]) => {
       // front camera or back camera check here!
       const device = devices.find(f => (/back|rear|environment|зад/gi.test(f.label))); // Default Back Facing Camera
