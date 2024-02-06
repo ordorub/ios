@@ -4,7 +4,7 @@ On iPhone SE 1st, iOS 15.8.1 in Chrome and Safari an error often occurs in a spe
 
 If I go from the news page to the about page and back several times, an error appears that I cannot debug. After it, GET requests stop working.
 
-If you comment out GET requests, there is no error. If you remove ngx-scanner-crsode, then there is no error either.
+If you comment out GET requests, there is no error. If you remove ngx-scanner-qrcode, then there is no error either.
 
 Can you tell me where I should look to fix this?
 
