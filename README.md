@@ -1,6 +1,6 @@
-On Android there are no errors, everything works correctly.
+On Android in Chrome there are no errors, everything works correctly.
 
-On iPhone SE 1st, iOS 15.8.1 an error often occurs in a specific situation.
+On iPhone SE 1st, iOS 15.8.1 in Chrome and Safari an error often occurs in a specific situation.
 
 If I go from the news page to the about page and back several times, an error appears that I cannot debug. After it, GET requests stop working.
 
